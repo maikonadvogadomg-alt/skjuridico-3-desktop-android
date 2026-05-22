@@ -1,0 +1,40 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.github.skjuridico3desktop'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.github.skjuridico3desktop'
+        minSdk 24
+        targetSdk 34
+        versionCode 2
+        versionName '1.0.5'
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    packagingOptions {
+        resources { excludes += ['META-INF/**'] }
+    }
+}
+
+// Android puro — sem Capacitor, sem npm, sem Node.js
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+}
